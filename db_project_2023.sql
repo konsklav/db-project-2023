@@ -74,3 +74,23 @@ CREATE TABLE IF NOT EXISTS HasCoached (
     out_transfer_date DATE,
     PRIMARY KEY (coach_id, team_id)
 );
+
+--Έλεγχος, μέσω function και trigger, για κάθε ομάδα να υπάρχει διάστημα 10 ημερών μεταξύ των αγώνων της
+CREATE OR REPLACE FUNCTION check_duration_between_games() 
+RETURNS TRIGGER AS $$
+BEGIN
+    IF EXISTS (
+        SELECT 1 FROM Games
+        WHERE (home_team_id = NEW.home_team_id OR away_team_id = NEW.home_team_id) AND games_date >= (NEW.games_date - INTERVAL '10 days')
+    ) THEN
+        RAISE EXCEPTION 'The team must have a game with at least a 10-day duration before the next game.';
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER enforce_duration_between_games
+BEFORE INSERT ON Games
+FOR EACH ROW
+EXECUTE FUNCTION check_duration_between_games();
