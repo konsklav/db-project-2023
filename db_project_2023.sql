@@ -77,7 +77,8 @@ CREATE TABLE IF NOT EXISTS HasCoached (
 
 --Έλεγχος, μέσω function και trigger, για κάθε ομάδα να υπάρχει διάστημα 10 ημερών μεταξύ των αγώνων της
 CREATE OR REPLACE FUNCTION check_duration_between_games() 
-RETURNS TRIGGER AS $$
+RETURNS TRIGGER
+AS $$
 BEGIN
     IF EXISTS (
         SELECT 1 FROM Games
