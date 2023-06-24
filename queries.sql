@@ -30,3 +30,23 @@ WHERE G.games_date >= ?
     AND PGS.player_id = ?;
 
 -- d)
+SELECT
+    COUNT(*) AS total_games,
+    SUM(CASE WHEN home_team_id = T.team_id THEN 1 ELSE 0 END) AS home_games,
+    SUM(CASE WHEN away_team_id = T.team_id THEN 1 ELSE 0 END) AS away_games,
+    (T.home_losses + T.away_losses) AS losses,
+    (T.home_wins + T.away_wins) AS wins,
+    (T.home_draws + T.away_draws) AS draws,
+    T.home_wins,
+    T.away_wins,
+    T.home_losses,
+    T.away_losses,
+    T.home_draws,
+    T.away_draws
+FROM
+    Teams T
+JOIN
+    Games G ON T.team_id IN (G.home_team_id, G.away_team_id)
+WHERE
+    T.teams_name = ?
+    AND G.games_date BETWEEN ('2022-09-01' AND '2023-06-30'); -- Να βάλουμε ερωτηματικά
