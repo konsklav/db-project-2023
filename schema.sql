@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS GameEvents (
     game_id INTEGER NOT NULL PRIMARY KEY REFERENCES Games(game_id) ON DELETE CASCADE,
     player_id INTEGER NOT NULL REFERENCES Players(player_id),
     moment INTEGER NOT NULL,
-    event_type VARCHAR(255) NOT NULL CHECK (UPPER(event_type) IN ('ΓΚΟΛ', 'ΑΚΥΡΩΜΕΝΟ ΓΚΟΛ', 'ΚΟΚΚΙΝΗ ΚΑΡΤΑ', 'ΚΙΤΡΙΝΗ ΚΑΡΤΑ', 'ΠΕΝΑΛΤΙ', 'ΚΟΡΝΕΡ')) -- Χρήση check για την αποδοχή συγκεκριμένων συμβάντων του αγώνα (όπως περιγράφονται στην εκφώνηση)
+    event_type VARCHAR(255) NOT NULL CHECK (UPPER(event_type) IN ('ΓΚΟΛ', 'ΑΚΥΡΩΜΕΝΟ ΓΚΟΛ', 'ΚΟΚΚΙΝΗ ΚΑΡΤΑ', 'ΚΙΤΡΙΝΗ ΚΑΡΤΑ', 'ΠΕΝΑΛΤΙ', 'ΚΟΡΝΕΡ')) --Χρήση check για την αποδοχή συγκεκριμένων συμβάντων του αγώνα (όπως περιγράφονται στην εκφώνηση)
 );
 
 CREATE TABLE IF NOT EXISTS HasPlayed (
