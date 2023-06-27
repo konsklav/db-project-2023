@@ -1,508 +1,157 @@
--- Inserting 10 teams
--- Inserting team 1
-INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws)
-VALUES ('Barcelona', 'Camp Nou', 'History of Barcelona', 2, 1, 0, 1, 0, 0);
-
--- Inserting team 2
-INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws)
-VALUES ('Real Madrid', 'Santiago Bernabeu', 'History of Real Madrid', 1, 1, 1, 1, 0, 0);
-
--- Inserting team 3
-INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws)
-VALUES ('Manchester United', 'Old Trafford', 'History of Manchester United', 1, 0, 1, 2, 0, 0);
-
--- Inserting team 4
-INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws)
-VALUES ('Bayern Munich', 'Allianz Arena', 'History of Bayern Munich', 1, 2, 1, 0, 0, 0);
-
--- Inserting team 5
-INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws)
-VALUES ('Juventus', 'Allianz Stadium', 'History of Juventus', 0, 1, 2, 1, 0, 0);
-
--- Inserting team 6
-INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws)
-VALUES ('Liverpool', 'Anfield', 'History of Liverpool', 1, 1, 1, 1, 0, 0);
-
--- Inserting team 7
-INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws)
-VALUES ('Paris Saint-Germain', 'Parc des Princes', 'History of Paris Saint-Germain', 0, 1, 2, 1, 0, 0);
-
--- Inserting team 8
-INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws)
-VALUES ('Chelsea', 'Stamford Bridge', 'History of Chelsea', 2, 2, 0, 0, 0, 0);
-
--- Inserting team 9
-INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws)
-VALUES ('Arsenal', 'Emirates Stadium', 'History of Arsenal', 2, 1, 0, 1, 0, 0);
-
--- Inserting team 10
-INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws)
-VALUES ('AC Milan', 'San Siro', 'History of AC Milan', 0, 0, 2, 2, 0, 0);
-
-
--- Inserting 110 players (11 for each team, based on soccer positions)
--- Team 1 (Barcelona)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Lionel', 'Messi', 1, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Marc-André', 'ter Stegen', 1, 'Goalkeeper');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Gerard', 'Piqué', 1, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Jordi', 'Alba', 1, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Sergio', 'Busquets', 1, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Frenkie', 'de Jong', 1, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Pedri', '', 1, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Sergiño', 'Dest', 1, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Antoine', 'Griezmann', 1, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Ronald', 'Araújo', 1, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Sergi', 'Roberto', 1, 'Midfielder');
-
--- Team 2 (Real Madrid)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Karim', 'Benzema', 2, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Thibaut', 'Courtois', 2, 'Goalkeeper');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Raphael', 'Varane', 2, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Marcelo', '', 2, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Luka', 'Modric', 2, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Toni', 'Kroos', 2, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Eden', 'Hazard', 2, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Dani', 'Carvajal', 2, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Casemiro', '', 2, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Ferland', 'Mendy', 2, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Federico', 'Valverde', 2, 'Midfielder');
-
--- Team 3 (Manchester United)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Cristiano', 'Ronaldo', 3, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Bruno', 'Fernandes', 3, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Paul', 'Pogba', 3, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Marcus', 'Rashford', 3, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Harry', 'Maguire', 3, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Luke', 'Shaw', 3, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Aaron', 'Wan-Bissaka', 3, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Scott', 'McTominay', 3, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Fred', 'Rodrigues', 3, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Victor', 'Lindelof', 3, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Dean', 'Henderson', 3, 'Goalkeeper');
-
--- Team 4 (Bayern Munich)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Robert', 'Lewandowski', 4, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Thomas', 'Mueller', 4, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Manuel', 'Neuer', 4, 'Goalkeeper');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('David', 'Alaba', 4, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Joshua', 'Kimmich', 4, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Leon', 'Goretzka', 4, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Niklas', 'Sule', 4, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Alphonso', 'Davies', 4, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Kingsley', 'Coman', 4, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Leroy', 'Sane', 4, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Corentin', 'Tolisso', 4, 'Midfielder');
-
--- Team 5 (Juventus)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Cristiano', 'Ronaldo', 5, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Giorgio', 'Chiellini', 5, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Leonardo', 'Bonucci', 5, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Federico', 'Chiesa', 5, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Arthur', 'Melocni', 5, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Juan', 'Cuadrado', 5, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Paulo', 'Dybala', 5, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Aaron', 'Ramsey', 5, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Weston', 'McKennie', 5, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Dejan', 'Kulusevski', 5, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Wojciech', 'Szczesny', 5, 'Goalkeeper');
-
--- Team 6 (Liverpool)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Mohamed', 'Salah', 6, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Sadio', 'Mane', 6, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Virgil', 'van Dijk', 6, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Trent', 'Alexander-Arnold', 6, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Andrew', 'Robertson', 6, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Jordan', 'Henderson', 6, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Fabinho', 'Tavares', 6, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Diogo', 'Jota', 6, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Joel', 'Matip', 6, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Thiago', 'Alcantara', 6, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Alisson', 'Becker', 6, 'Goalkeeper');
-
--- Team 7 (Paris Saint-Germain)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Kylian', 'Mbappe', 7, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Neymar', 'Jr', 7, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Angel', 'Di Maria', 7, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Marco', 'Verratti', 7, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Presnel', 'Kimpembe', 7, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Marquinhos', '', 7, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Leandro', 'Paredes', 7, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Keylor', 'Navas', 7, 'Goalkeeper');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Achraf', 'Hakimi', 7, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Mauro', 'Icardi', 7, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Georginio', 'Wijnaldum', 7, 'Midfielder');
-
--- Team 8 (Chelsea)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Golo', 'Kante', 8, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Mason', 'Mount', 8, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Timo', 'Werner', 8, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Cesar', 'Azpilicueta', 8, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Kai', 'Havertz', 8, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Ben', 'Chilwell', 8, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Jorginho', '', 8, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Thiago', 'Silva', 8, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Reece', 'James', 8, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Edouard', 'Mendy', 8, 'Goalkeeper');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Hakim', 'Ziyech', 8, 'Midfielder');
-
--- Team 9 (Arsenal)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Pierre-Emerick', 'Aubameyang', 9, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Bukayo', 'Saka', 9, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Thomas', 'Partey', 9, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Gabriel', 'Magalhaes', 9, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Emile', 'Smith Rowe', 9, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Kieran', 'Tierney', 9, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Nicolas', 'Pepe', 9, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Bernd', 'Leno', 9, 'Goalkeeper');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Hector', 'Bellerin', 9, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Granit', 'Xhaka', 9, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Rob', 'Holding', 9, 'Defender');
-
--- Team 10 (AC Milan)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Gianluigi', 'Donnarumma', 10, 'Goalkeeper');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Theo', 'Hernandez', 10, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Franck', 'Kessie', 10, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Simon', 'Kjaer', 10, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Ante', 'Rebic', 10, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Ismael', 'Bennacer', 10, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Rafael', 'Leao', 10, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Alessio', 'Romagnoli', 10, 'Defender');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Sandro', 'Tonali', 10, 'Midfielder');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Zlatan', 'Ibrahimovic', 10, 'Forward');
-
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Davide', 'Calabria', 10, 'Defender');
-
---Players to be used as coaches
--- Team 1 (Real Madrid)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Luis', 'Garcia', 1, 'Forward');
-
--- Team 2 (FC Barcelona)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Marc', 'Lopez', 2, 'Midfielder');
-
--- Team 3 (Manchester United)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Ryan', 'Wilson', 3, 'Defender');
-
--- Team 4 (Bayern Munich)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Julian', 'Muller', 4, 'Goalkeeper');
-
--- Team 5 (Juventus)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Matteo', 'Rossi', 5, 'Midfielder');
-
--- Team 6 (Liverpool)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Adam', 'Johnson', 6, 'Defender');
-
--- Team 7 (Paris Saint-Germain)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Antoine', 'Dubois', 7, 'Forward');
-
--- Team 8 (Chelsea)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Oliver', 'Baker', 8, 'Midfielder');
-
--- Team 9 (Arsenal)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Samuel', 'Wright', 9, 'Defender');
-
--- Team 10 (AC Milan)
-INSERT INTO Players (players_name, players_surname, team_id, position)
-VALUES ('Leonardo', 'Ricci', 10, 'Forward');
-
--- Coaches
--- Team 1 (Real Madrid)
-INSERT INTO Coaches (player_id, coaching_role)
-VALUES (111, 'Head Coach');
-
--- Team 2 (FC Barcelona)
-INSERT INTO Coaches (player_id, coaching_role)
-VALUES (112, 'Head Coach');
-
--- Team 3 (Manchester United)
-INSERT INTO Coaches (player_id, coaching_role)
-VALUES (113, 'Head Coach');
-
--- Team 4 (Bayern Munich)
-INSERT INTO Coaches (player_id, coaching_role)
-VALUES (114, 'Head Coach');
-
--- Team 5 (Juventus)
-INSERT INTO Coaches (player_id, coaching_role)
-VALUES (115, 'Head Coach');
-
--- Team 6 (Liverpool)
-INSERT INTO Coaches (player_id, coaching_role)
-VALUES (116, 'Head Coach');
-
--- Team 7 (Paris Saint-Germain)
-INSERT INTO Coaches (player_id, coaching_role)
-VALUES (117, 'Head Coach');
-
--- Team 8 (Chelsea)
-INSERT INTO Coaches (player_id, coaching_role)
-VALUES (118, 'Head Coach');
-
--- Team 9 (Arsenal)
-INSERT INTO Coaches (player_id, coaching_role)
-VALUES (119, 'Head Coach');
-
--- Team 10 (AC Milan)
-INSERT INTO Coaches (player_id, coaching_role)
-VALUES (120, 'Head Coach');
-
--- HasCoached
--- Team 1 (Real Madrid)
-INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date)
-VALUES (1, 1, '2021-05-10', NULL);
-
--- Team 2 (FC Barcelona)
-INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date)
-VALUES (2, 2, '2021-06-15', NULL);
-
--- Team 3 (Manchester United)
-INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date)
-VALUES (3, 3, '2021-07-02', NULL);
-
--- Team 4 (Bayern Munich)
-INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date)
-VALUES (4, 4, '2021-05-18', NULL);
-
--- Team 5 (Juventus)
-INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date)
-VALUES (5, 5, '2021-06-27', NULL);
-
--- Team 6 (Liverpool)
-INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date)
-VALUES (6, 6, '2021-07-12', NULL);
-
--- Team 7 (Paris Saint-Germain)
-INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date)
-VALUES (7, 7, '2021-05-05', NULL);
-
--- Team 8 (Chelsea)
-INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date)
-VALUES (8, 8, '2021-06-20', NULL);
-
--- Team 9 (Arsenal)
-INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date)
-VALUES (9, 9, '2021-07-28', NULL);
-
--- Team 10 (AC Milan)
-INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date)
-VALUES (10, 10, '2021-05-14', NULL);
+INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws) VALUES ('Barcelona', 'Camp Nou', 'History of Barcelona', 2, 1, 0, 1, 0, 0);
+INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws) VALUES ('Real Madrid', 'Santiago Bernabeu', 'History of Real Madrid', 1, 1, 1, 1, 0, 0);
+INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws) VALUES ('Manchester United', 'Old Trafford', 'History of Manchester United', 1, 0, 1, 2, 0, 0);
+INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws) VALUES ('Bayern Munich', 'Allianz Arena', 'History of Bayern Munich', 1, 2, 1, 0, 0, 0);
+INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws) VALUES ('Juventus', 'Allianz Stadium', 'History of Juventus', 0, 1, 2, 1, 0, 0);
+INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws) VALUES ('Liverpool', 'Anfield', 'History of Liverpool', 1, 1, 1, 1, 0, 0);
+INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws) VALUES ('Paris Saint-Germain', 'Parc des Princes', 'History of Paris Saint-Germain', 0, 1, 2, 1, 0, 0);
+INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws) VALUES ('Chelsea', 'Stamford Bridge', 'History of Chelsea', 2, 2, 0, 0, 0, 0);
+INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws) VALUES ('Arsenal', 'Emirates Stadium', 'History of Arsenal', 2, 1, 0, 1, 0, 0);
+INSERT INTO Teams (teams_name, home_field_name, history_description, home_wins, away_wins, home_losses, away_losses, home_draws, away_draws) VALUES ('AC Milan', 'San Siro', 'History of AC Milan', 0, 0, 2, 2, 0, 0);
+
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Lionel', 'Messi', 1, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Marc-André', 'ter Stegen', 1, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Gerard', 'Piqué', 1, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Jordi', 'Alba', 1, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Sergio', 'Busquets', 1, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Frenkie', 'de Jong', 1, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Pedri', '', 1, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Sergiño', 'Dest', 1, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Antoine', 'Griezmann', 1, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Ronald', 'Araújo', 1, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Sergi', 'Roberto', 1, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Karim', 'Benzema', 2, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Thibaut', 'Courtois', 2, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Raphael', 'Varane', 2, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Marcelo', '', 2, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Luka', 'Modric', 2, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Toni', 'Kroos', 2, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Eden', 'Hazard', 2, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Dani', 'Carvajal', 2, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Casemiro', '', 2, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Ferland', 'Mendy', 2, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Federico', 'Valverde', 2, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Cristiano', 'Ronaldo', 3, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Bruno', 'Fernandes', 3, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Paul', 'Pogba', 3, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Marcus', 'Rashford', 3, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Harry', 'Maguire', 3, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Luke', 'Shaw', 3, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Aaron', 'WanBissaka', 3, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Scott', 'McTominay', 3, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Fred', 'Rodrigues', 3, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Victor', 'Lindelof', 3, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Dean', 'Henderson', 3, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Robert', 'Lewndowski', 4, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Thomas', 'Mueller', 4, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Manuel', 'Neuer', 4, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('David', 'Alaba', 4, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Joshua', 'Kimmich', 4, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Leon', 'Goretzka', 4, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Niklas', 'Sule', 4, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Alphonso', 'Davies', 4, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Kingsley', 'Coman', 4, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Leroy', 'Sane', 4, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Corentin', 'Tolisso', 4, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Cristiano', 'Ronaldo', 5, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Giorgio', 'Chiellini', 5, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Leonardo', 'Bonucci', 5, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Federico', 'Chiesa', 5, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Arthur', 'Melocni', 5, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Juan', 'Cuadrado', 5, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Paulo', 'Dybala', 5, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Aaron', 'Ramsey', 5, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Weston', 'McKennie', 5, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Dejan', 'Kulusevski', 5, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Wojciech', 'Szczesny', 5, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Mohamed', 'Salah', 6, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Sadio', 'Mane', 6, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Virgil', 'van Dijk', 6, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Alexander', 'Arnold', 6, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Andrew', 'Robertson', 6, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Jordan', 'Henderson', 6, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Fabinho', 'Tavares', 6, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Diogo', 'Jota', 6, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Joel', 'Matip', 6, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Thiago', 'Alcantara', 6, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Alisson', 'Becker', 6, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Kylian', 'Mbappe', 7, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Neymar', 'Jr', 7, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Angel', 'Di Maria', 7, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Marco', 'Verratti', 7, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Presnel', 'Kimpembe', 7, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Marquinhos', '', 7, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Leandro', 'Paredes', 7, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Keylor', 'Navas', 7, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Achraf', 'Hakimi', 7, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Mauro', 'Icardi', 7, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Georginio', 'Wijnaldum', 7, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Golo', 'Kante', 8, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Mason', 'Mount', 8, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Timo', 'Werner', 8, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Cesar', 'Azplicueta', 8, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Kai', 'Havertz', 8, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Ben', 'Chilwell', 8, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Jorginho', '', 8, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Thiago', 'Silva', 8, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Reece', 'James', 8, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Edouard', 'Mendy', 8, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Hakim', 'Ziyech', 8, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Pierre', 'Aubameyang', 9, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Bukayo', 'Saka', 9, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Thomas', 'Partey', 9, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Gabriel', 'Magalhaes', 9, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Emile', 'Smith Rowe', 9, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Kieran', 'Tierney', 9, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Nicolas', 'Pepe', 9, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Bernd', 'Leno', 9, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Hector', 'Bellerin', 9, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Granit', 'Xhaka', 9, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Rob', 'Holding', 9, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Gianluigi', 'Donnarumma', 10, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Theo', 'Hernandez', 10, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Franck', 'Kessie', 10, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Simon', 'Kjaer', 10, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Ante', 'Rebic', 10, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Ismael', 'Bennacer', 10, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Rafael', 'Leao', 10, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Alessio', 'Romagnoli', 10, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Sandro', 'Tonali', 10, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Zlatan', 'Ibraimovic', 10, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Davide', 'Calabria', 10, 'Defender');
+
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Luis', 'Garcia', 1, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Marc', 'Lopez', 2, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Ryan', 'Wilson', 3, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Julian', 'Muller', 4, 'Goalkeeper');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Matteo', 'Rossi', 5, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Adam', 'Johnson', 6, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Antoine', 'Dubois', 7, 'Forward');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Oliver', 'Baker', 8, 'Midfielder');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Samuel', 'Wright', 9, 'Defender');
+INSERT INTO Players (players_name, players_surname, team_id, position) VALUES ('Leonardo', 'Ricci', 10, 'Forward');
+
+INSERT INTO Coaches (player_id, coaching_role) VALUES (111, 'Head Coach');
+INSERT INTO Coaches (player_id, coaching_role) VALUES (112, 'Head Coach');
+INSERT INTO Coaches (player_id, coaching_role) VALUES (113, 'Head Coach');
+INSERT INTO Coaches (player_id, coaching_role) VALUES (114, 'Head Coach');
+INSERT INTO Coaches (player_id, coaching_role) VALUES (115, 'Head Coach');
+INSERT INTO Coaches (player_id, coaching_role) VALUES (116, 'Head Coach');
+INSERT INTO Coaches (player_id, coaching_role) VALUES (117, 'Head Coach');
+INSERT INTO Coaches (player_id, coaching_role) VALUES (118, 'Head Coach');
+INSERT INTO Coaches (player_id, coaching_role) VALUES (119, 'Head Coach');
+INSERT INTO Coaches (player_id, coaching_role) VALUES (120, 'Head Coach');
+
+INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date) VALUES (1, 1, '2021-05-10', NULL);
+INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date) VALUES (2, 2, '2021-06-15', NULL);
+INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date) VALUES (3, 3, '2021-07-02', NULL);
+INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date) VALUES (4, 4, '2021-05-18', NULL);
+INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date) VALUES (5, 5, '2021-06-27', NULL);
+INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date) VALUES (6, 6, '2021-07-12', NULL);
+INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date) VALUES (7, 7, '2021-05-05', NULL);
+INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date) VALUES (8, 8, '2021-06-20', NULL);
+INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date) VALUES (9, 9, '2021-07-28', NULL);
+INSERT INTO HasCoached (coach_id, team_id, in_transfer_date, out_transfer_date) VALUES (10, 10, '2021-05-14', NULL);
 
 -- HasPlayed
 -- Player 1 (Team 1 - Real Madrid)
@@ -985,46 +634,32 @@ VALUES (119, 9, '1993-06-08', '2000-06-08');
 INSERT INTO HasPlayed (player_id, team_id, in_transfer_date, out_transfer_date)
 VALUES (120, 10, '1999-01-17', '2006-01-17');
 
--- Games
-INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration)
-VALUES
-  (1, 2, 3, 1, '2022-09-01', '01:32:00'),
-  (2, 3, 4, 0, '2022-09-13', '01:38:00'),
-  (3, 4, 2, 5, '2022-09-25', '01:40:00'),
-  (4, 5, 1, 2, '2022-10-07', '01:35:00'),
-  (5, 6, 0, 4, '2022-10-19', '01:37:00'),
-  (6, 7, 5, 2, '2022-10-31', '01:39:00'),
-  (7, 8, 1, 3, '2022-11-12', '01:36:00'),
-  (8, 9, 2, 0, '2022-11-24', '01:40:00'),
-  (9, 10, 3, 2, '2022-12-06', '01:33:00'),
-  (10, 1, 0, 1, '2022-12-18', '01:38:00'),
-  (1, 3, 5, 1, '2022-12-30', '01:40:00'),
-  (2, 4, 1, 3, '2023-01-11', '01:35:00'),
-  (3, 5, 4, 2, '2023-01-23', '01:32:00'),
-  (4, 6, 3, 1, '2023-02-04', '01:39:00'),
-  (5, 7, 2, 3, '2023-02-16', '01:36:00'),
-  (6, 8, 1, 4, '2023-02-28', '01:40:00'),
-  (7, 9, 0, 2, '2023-03-12', '01:33:00'),
-  (8, 10, 5, 3, '2023-03-24', '01:38:00'),
-  (9, 1, 4, 1, '2023-04-05', '01:35:00'),
-  (10, 2, 1, 2, '2023-04-17', '01:37:00');
+INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration) VALUES (1, 2, 3, 1, '2022-09-01', '01:32:00');
+INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration) VALUES (2, 3, 4, 0, '2022-09-13', '01:38:00');
+INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration) VALUES (3, 4, 2, 5, '2022-09-25', '01:40:00');
+INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration) VALUES (4, 5, 1, 2, '2022-10-07', '01:35:00');
+INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration) VALUES (5, 6, 0, 4, '2022-10-19', '01:37:00');
+INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration) VALUES (6, 7, 5, 2, '2022-10-31', '01:39:00');
+INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration) VALUES (7, 8, 1, 3, '2022-11-12', '01:36:00');
+INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration) VALUES (8, 9, 2, 0, '2022-11-24', '01:40:00');
+INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration) VALUES (9, 10, 3, 2, '2022-12-06', '01:33:00');
+INSERT INTO Games (home_team_id, away_team_id, home_teams_score, away_teams_score, games_date, duration) VALUES (10, 1, 0, 1, '2022-12-18', '01:38:00');
 
--- GameEvents
 INSERT INTO GameEvents (game_id, player_id, moment, event_type)
 VALUES
   (1, 1, 12, 'ΓΚΟΛ'),
   (1, 2, 23, 'ΓΚΟΛ'),
+  (1, 1, 42, 'ΠΕΝΑΛΤΙ'),
   (1, 1, 45, 'ΓΚΟΛ'),
   (1, 14, 18, 'ΓΚΟΛ'),
   (2, 13, 33, 'ΓΚΟΛ'),
   (2, 13, 59, 'ΓΚΟΛ'),
   (2, 13, 10, 'ΓΚΟΛ'),
   (2, 15, 36, 'ΓΚΟΛ');
-
--- PlayerGameStatistics
+  
 INSERT INTO PlayerGameStatistics (player_id, team_id, game_id, red_cards, yellow_cards, goals, canceled_goals, active_time, penalties, corners)
 VALUES 
-  (1, 1, 1, 0, 0, 2, 1, '01:32:00', 0, 5),
+  (1, 1, 1, 0, 0, 2, 1, '01:32:00', 1, 5),
   (2, 1, 1, 1, 0, 1, 2, '01:32:00', 0, 5),
   (14, 2, 1, 0, 1, 2, 1, '01:32:00', 0, 5),
   (13, 1, 2, 0, 1, 3, 0, '01:38:00', 0, 5),
