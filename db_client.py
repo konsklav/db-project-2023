@@ -50,8 +50,7 @@ try:
 
     cursor = connection.cursor()
 
-    # option = input("Choose a query to execute (options: a, b, c, d): ")
-    option = 'c'
+    option = input("Choose a query to execute (options: a, b, c, d): ")
 
     while option not in valid_options:
         option = input("Invalid option. Choose again (options: a, b, c, d): ")
