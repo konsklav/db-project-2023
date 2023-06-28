@@ -89,7 +89,6 @@ BEGIN
     ) THEN
         RAISE EXCEPTION 'The team must have each game at least 10 days after the previous one.';
     END IF;
-
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;

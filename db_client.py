@@ -9,9 +9,9 @@ sql_query_a = "SELECT T.teams_name, CONCAT(P.players_name, ' ', P.players_surnam
                 "JOIN HasCoached HC ON HC.team_id = T.team_id AND (HC.in_transfer_date <= G.games_date) AND (HC.out_transfer_date >= G.games_date OR HC.out_transfer_date IS NULL) " + \
                 "LEFT JOIN Coaches C ON C.coach_id = HC.coach_id " + \
                 "JOIN Players P ON P.player_id = C.player_id " + \
-              "WHERE G.game_id = %s;"
+              "WHERE G.game_id = 1;"
 
-parameters_a = (1,)
+parameters_a = (1,) #Χρήση παραμέτρων για ένδειξη παραμετροποίησης των ερωτημάτων. Στα πλαίσια του παραδοτέου θα μπορούσε να παραλειφθεί.
 
 sql_query_b = "SELECT event_type, moment, CONCAT(players_name, ' ', players_surname) AS player, T.teams_name " + \
               "FROM GameEvents GE " + \
@@ -23,7 +23,7 @@ sql_query_b = "SELECT event_type, moment, CONCAT(players_name, ' ', players_surn
                 "AND (HP.in_transfer_date <= (SELECT games_date FROM Games WHERE game_id = %s) " + \
                 "AND (HP.out_transfer_date IS NULL OR HP.out_transfer_date > (SELECT games_date FROM Games WHERE game_id = %s)));"
 
-parameters_b = (1, 1, 1,)
+parameters_b = (1, 1, 1,) #Χρήση παραμέτρων για ένδειξη παραμετροποίησης των ερωτημάτων. Στα πλαίσια του παραδοτέου θα μπορούσε να παραλειφθεί.
 
 sql_query_c = "SELECT CONCAT(P.players_name, ' ', P.players_surname) AS player, SUM(PGS.goals) AS number_of_goals, SUM(PGS.penalties) AS number_of_penalties, SUM(PGS.red_cards) AS number_of_red_cards, SUM(PGS.yellow_cards) AS number_of_yellow_cards, SUM(PGS.active_time::interval) AS active_time, P.position " + \
               "FROM Games G " + \
@@ -34,14 +34,14 @@ sql_query_c = "SELECT CONCAT(P.players_name, ' ', P.players_surname) AS player, 
                 "AND PGS.player_id = %s " + \
               "GROUP BY CONCAT(P.players_name, ' ', P.players_surname), P.position;"
 
-parameters_c = ('2022-09-01', '2023-06-30', 14,)
+parameters_c = ('2022-09-01', '2023-06-30', 14,)  #Χρήση παραμέτρων για ένδειξη παραμετροποίησης των ερωτημάτων. Στα πλαίσια του παραδοτέου θα μπορούσε να παραλειφθεί.
 
 sql_query_d = "SELECT T.teams_name, COUNT(*) AS total_games, SUM(CASE WHEN home_team_id = T.team_id THEN 1 ELSE 0 END) AS home_games, SUM(CASE WHEN away_team_id = T.team_id THEN 1 ELSE 0 END) AS away_games, (T.home_losses + T.away_losses) AS losses, (T.home_wins + T.away_wins) AS wins, (T.home_draws + T.away_draws) AS draws, T.home_wins, T.away_wins, T.home_losses, T.away_losses, T.home_draws, T.away_draws " + \
               "FROM Teams T JOIN Games G ON T.team_id IN (G.home_team_id, G.away_team_id) " + \
               "WHERE T.teams_name = %s AND G.games_date BETWEEN %s AND %s " + \
               "GROUP BY T.team_id, T.home_losses, T.away_losses, T.home_wins, T.away_wins, T.home_draws, T.away_draws;"
 
-parameters_d = ('Barcelona', '2022-09-01', '2023-06-30',)
+parameters_d = ('Barcelona', '2022-09-01', '2023-06-30',) #Χρήση παραμέτρων για ένδειξη παραμετροποίησης των ερωτημάτων. Στα πλαίσια του παραδοτέου θα μπορούσε να παραλειφθεί.
 
 valid_options = ['a', 'b', 'c', 'd']
 

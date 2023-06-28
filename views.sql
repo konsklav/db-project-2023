@@ -31,7 +31,7 @@ FROM Games G
 WHERE G.games_date = '2022-09-01'
 GROUP BY T1.home_field_name, G.game_id, G.games_date, G.duration, T1.teams_name, T2.teams_name, G.home_teams_score, G.away_teams_score;
 
-SELECT * FROM games_program; --Για επιλογή του VIEW
+SELECT * FROM games_program; --Για εκτέλεση του VIEW
 
 -- Ετήσιο πρωτάθλημα αγώνων
 CREATE VIEW season_program AS
@@ -48,4 +48,4 @@ FROM Games G
 WHERE G.games_date BETWEEN '2022-09-01' AND '2023-06-30'
 GROUP BY G.game_id, T1.home_field_name, T1.teams_name, T2.teams_name;
 
-SELECT * FROM season_program; --Για επιλογή του VIEW
+SELECT * FROM season_program; --Για εκτέλεση του VIEW
