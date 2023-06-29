@@ -1,7 +1,7 @@
 import sys
 import psycopg2
 
-sys.stdout.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8') #Για προβολή ελληνικών καταχωρήσεων στη κονσόλα
 
 sql_query_a = "SELECT T.teams_name, CONCAT(P.players_name, ' ', P.players_surname) AS coach " + \
               "FROM Games G " + \
@@ -60,23 +60,31 @@ try:
 
         result_set = cursor.fetchall()
 
+        print("Result:")
+
         for row in result_set:
             print("Team =", row[0])
-            print("Coach =", row[1])
+            print("Coach =", row[1], '\n')
+            
     elif option == 'b':
         cursor.execute(sql_query_b, parameters_b)
 
         result_set = cursor.fetchall()
+
+        print("Result:")
 
         for row in result_set:
             print("Event = ",row[0])
             print("Moment = ",row[1])
             print("Player = ",row[2])
             print("Team = ",row[3], '\n')
+
     elif option == 'c':
         cursor.execute(sql_query_c, parameters_c)
 
         result_set = cursor.fetchall()
+
+        print("Result:")
 
         for row in result_set:
             print("Player = ",row[0])
@@ -85,11 +93,14 @@ try:
             print("No. of red cards = ",row[3])
             print("No. of yellow cards = ",row[4])
             print("Active time = ",row[5])
-            print("Position = ",row[6])
+            print("Position = ",row[6], '\n')
+
     elif option == 'd':
         cursor.execute(sql_query_d, parameters_d)
 
         result_set = cursor.fetchall()
+
+        print("Result:")
 
         for row in result_set:
             print("Team = ",row[0])
@@ -104,7 +115,7 @@ try:
             print("Home losses = ",row[9])
             print("Away losses = ",row[10])
             print("Home draws = ",row[11])
-            print("Away draws = ",row[12])
+            print("Away draws = ",row[12], '\n')
 
 except(Exception, psycopg2.Error) as error:
     print("Error while fetching data from PostgreSQL ", error)
