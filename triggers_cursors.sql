@@ -29,88 +29,88 @@ FOR EACH ROW
 EXECUTE FUNCTION team_relegation();
 
 --b)
--- Declare variables
-DECLARE cur_player CURSOR FOR SELECT player_id, players_name, players_surname FROM Players;
+--Ο κώδικας τοποθετήθηκε μέσα σε procedure για να μπορεί να τρέξει στο pgadmin4
+CREATE OR REPLACE PROCEDURE statistics_cursors()
+LANGUAGE plpgsql
+AS $$
+DECLARE
+  current_player_id INTEGER;
+  current_team_id INTEGER;
+  current_game_id INTEGER;
+  current_start_date DATE := '2022-09-01';
+  current_end_date DATE;
+  current_stats RECORD;
+  current_goals INTEGER;
+  current_penalties INTEGER;
+  current_red_cards INTEGER;
+  current_yellow_cards INTEGER;
+  current_active_time TIME;
+  current_position VARCHAR(255);
+  count INTEGER := 0;
 
-DECLARE cur_game CURSOR FOR SELECT game_id, games_date FROM Games ORDER BY games_date;
+  player_cursor CURSOR FOR SELECT DISTINCT player_id FROM PlayerGameStatistics ORDER BY player_id;
+  team_cursor CURSOR (team_player_id INTEGER) FOR SELECT DISTINCT team_id FROM PlayerGameStatistics WHERE player_id = team_player_id ORDER BY team_id;
+  game_cursor CURSOR (game_player_id INTEGER, game_team_id INTEGER) FOR SELECT DISTINCT PGS.game_id, games_date FROM PlayerGameStatistics PGS JOIN Games G ON PGS.game_id = G.game_id WHERE player_id = game_player_id AND PGS.team_id = game_team_id ORDER BY PGS.game_id;
 
-DECLARE cur_stats CURSOR FOR
-    SELECT P.players_name, P.players_surname, G.games_date, T.teams_name, PGS.goals, PGS.penalties, PGS.red_cards, PGS.yellow_cards, PGS.active_time, P.position
-    FROM PlayerGameStatistics PGS
-    JOIN Players P ON PGS.player_id = P.player_id
-    JOIN Teams T ON PGS.team_id = T.team_id
-    JOIN Games G ON PGS.game_id = G.game_id
-    WHERE P.player_id = cur_player.player_id
-    ORDER BY G.games_date;
-
--- Declare variables to hold fetched values
-DECLARE @player_id INTEGER;
-DECLARE @players_name VARCHAR(10);
-DECLARE @players_surname VARCHAR(10);
-
-DECLARE @game_id INTEGER;
-DECLARE @games_date DATE;
-
-DECLARE @goals INTEGER;
-DECLARE @penalties INTEGER;
-DECLARE @red_cards INTEGER;
-DECLARE @yellow_cards INTEGER;
-DECLARE @active_time TIME;
-DECLARE @position VARCHAR(255);
-
--- Open the player cursor and fetch the first row
-OPEN cur_player;
-FETCH NEXT FROM cur_player INTO @player_id, @players_name, @players_surname;
-
--- Loop through each player
-WHILE @@FETCH_STATUS = 0
 BEGIN
-    -- Open the game cursor and fetch the first row
-    OPEN cur_game;
-    FETCH NEXT FROM cur_game INTO @game_id, @games_date;
-    
-    -- Loop through each game
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-        -- Open the stats cursor and fetch the first 10 rows
-        OPEN cur_stats;
-        FETCH NEXT FROM cur_stats INTO @players_name, @players_surname, @games_date, @teams_name, @goals, @penalties, @red_cards, @yellow_cards, @active_time, @position;
-        
-        -- Print header
-        PRINT 'Player: ' + @players_name + ' ' + @players_surname + ', Game Date: ' + CONVERT(VARCHAR(10), @games_date, 120);
-        PRINT '---------------------------------------------------------';
-        PRINT 'Team           Goals   Penalties   Red Cards   Yellow Cards   Active Time   Position';
-        PRINT '---------------------------------------------------------';
-        
-        -- Loop through each stat row
-        WHILE @@FETCH_STATUS = 0
-        BEGIN
-            -- Print the statistics
-            PRINT @teams_name + '       ' + CONVERT(VARCHAR(3), @goals) + '        ' + CONVERT(VARCHAR(3), @penalties) + '            ' + CONVERT(VARCHAR(3), @red_cards) + '            ' + CONVERT(VARCHAR(3), @yellow_cards) + '              ' + CONVERT(VARCHAR(8), @active_time, 108) + '    ' + @position;
-            
-            -- Fetch the next row
-            FETCH NEXT FROM cur_stats INTO @players_name, @players_surname, @games_date, @teams_name, @goals, @penalties, @red_cards, @yellow_cards, @active_time, @position;
-        END
-        
-        -- Close the stats cursor
-        CLOSE cur_stats;
-        DEALLOCATE cur_stats;
-        
-        -- Fetch the next game row
-        FETCH NEXT FROM cur_game INTO @game_id, @games_date;
-    END
-    
-    -- Close the game cursor
-    CLOSE cur_game;
-    DEALLOCATE cur_game;
-    
-    -- Fetch the next player row
-    FETCH NEXT FROM cur_player INTO @player_id, @players_name, @players_surname;
-    
-    -- Print a separator between players
-    PRINT '---------------------------------------------------------';
-END
+  OPEN player_cursor;
+  LOOP
+    FETCH player_cursor INTO current_player_id;
+    EXIT WHEN current_player_id IS NULL;
 
--- Close the player cursor
-CLOSE cur_player;
-DEALLOCATE cur_player;
+    OPEN team_cursor(current_player_id);
+    LOOP
+      FETCH team_cursor INTO current_team_id;
+      EXIT WHEN current_team_id IS NULL;
+
+      OPEN game_cursor(current_player_id, current_team_id);
+      LOOP
+        FETCH game_cursor INTO current_game_id, current_start_date;
+        EXIT WHEN current_game_id IS NULL;
+
+        current_end_date := current_start_date + INTERVAL '10 days';
+
+        FOR current_stats IN (
+          SELECT
+            goals,
+            penalties,
+            red_cards,
+            yellow_cards,
+            active_time,
+            position
+          FROM PlayerGameStatistics PGS
+            JOIN Players P ON PGS.player_id = P.player_id
+          WHERE
+            PGS.player_id = current_player_id AND
+            PGS.team_id = current_team_id AND
+            game_id IN (SELECT game_id FROM Games WHERE games_date >= current_start_date AND games_date < current_end_date)
+          GROUP BY goals, penalties, red_cards, yellow_cards, active_time, position
+        ) LOOP
+
+          current_goals := current_stats.goals;
+          current_penalties := current_stats.penalties;
+          current_red_cards := current_stats.red_cards;
+          current_yellow_cards := current_stats.yellow_cards;
+          current_active_time := current_stats.active_time;
+          current_position := current_stats.position;
+
+          RAISE NOTICE 'Player: %, Team: %, Period: % - %', current_player_id, current_team_id, current_start_date, current_end_date;
+          RAISE NOTICE 'Goals: %, Penalties: %, Red Cards: %, Yellow Cards: %, Active Time: %, Position: %', current_goals, current_penalties, current_red_cards, current_yellow_cards, current_active_time, current_position;
+
+          count := count + 1;
+
+          IF count = 10 THEN
+            count := 0;
+            EXIT WHEN NOT FOUND;
+          END IF;
+        END LOOP;
+      END LOOP;
+      CLOSE game_cursor;
+    END LOOP;
+    CLOSE team_cursor;
+  END LOOP;
+  CLOSE player_cursor;
+END;
+$$
+
+CALL statistics_cursors();  --Κλήση της διαδικασίας
